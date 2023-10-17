@@ -4,6 +4,8 @@ Connect to an identity provider such as Okta using OAuth 2.0 and validate authen
 
 **For more starter kits for Compute, head over to the [Fastly Developer Hub](https://developer.fastly.com/solutions/starters)**
 
+> This starter kit has an [equivalent Rust implementation](https://github.com/fastly/compute-rust-auth) 🦀
+
 ## Authentication at the network's edge, using OAuth 2.0, OpenID Connect, and Fastly Compute
 
 This is a self-contained JavaScript implementation for the [OAuth 2.0](https://oauth.net/2/) [Authorization Code flow](https://oauth.net/2/grant-types/authorization-code/) with [Proof Key for Code Exchange (PKCE)](https://oauth.net/2/pkce/), deployed to [Fastly Compute](https://www.fastly.com/products/edge-compute/).
@@ -13,10 +15,6 @@ It includes [JSON Web Token (JWT)](https://oauth.net/2/jwt/) verification, and [
 ![A simplified flow diagram of authentication using Compute](https://user-images.githubusercontent.com/12828487/111877689-4b876500-899c-11eb-9d6c-6ecc240fa317.png)
 
 Scroll down to view [the flow in more detail](#the-flow-in-detail).
-
-> Check out the [equivalent Rust implementation](https://github.com/fastly/compute-rust-auth) 🦀
-
-> **For quick ways to get started with Fastly Compute, see the [Fastly Developer Hub](https://developer.fastly.com/solutions/starters)**
 
 ## Getting started
 

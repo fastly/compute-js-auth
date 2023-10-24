@@ -2,10 +2,10 @@
 # https://developer.fastly.com/reference/fastly-toml/
 
 authors = ["dmilitaru@fastly.com"]
-description = "OAuth 2.0 starter kit for Fastly Compute"
+description = "Connect to an identity provider such as Google using OAuth 2.0 and validate authentication status at the Edge, to authorize access to your edge or origin hosted applications."
 language = "javascript"
 manifest_version = 3
-name = "compute-js-auth"
+name = "OAuth 2.0 implementation for JavaScript"
 service_id = ""
 
 [local_server]

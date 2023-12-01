@@ -105,7 +105,7 @@ You'll be prompted to enter a series of configuration settings, [explained above
 
 ### 3. Link the Identity Provider to your Fastly domain
 
-Remember to add `https://{your-fastly-compute-domain}/callback` (e.g., _https://random-funky-words.edgecompute.app/callback_) to the list of allowed callback URLs in your IdP's OAuth app configuration.
+Remember to add `https://{your-fastly-compute-domain}/callback` (e.g., _https://{random-funky-words}.edgecompute.app/callback_) to the list of allowed callback URLs in your IdP's OAuth app configuration.
 
 This allows the authorization server to send the user back to the Compute@Edge service.
 

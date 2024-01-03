@@ -65,7 +65,7 @@ Configuration data lives in Fastly [Config Store](https://developer.fastly.com/l
 
 ##### Option A: Using environment variables
 
-Create an `.env` file ([example contents here](./.env.example)) and set the following environment variables:
+Create an `.env` file ([example contents here](https://github.com/fastly/compute-js-auth/blob/main/.env.example)) and set the following environment variables:
 * `CLIENT_ID`: The OAuth 2.0 client ID (determined by the Identity Provider (IdP)).
 * `CLIENT_SECRET`: The OAuth 2.0 client secret (if required by the IdP).
 * `NONCE_SECRET`: A secret to verify the OpenID nonce used to mitigate replay attacks. It must be sufficiently random to not be guessable.
@@ -76,11 +76,11 @@ Create an `.env` file ([example contents here](./.env.example)) and set the foll
 
 Store configuration secrets in a Fastly [Secret Store](https://developer.fastly.com/learning/concepts/edge-state/dynamic-config/#secret-stores) named `compute_js_auth_secrets`, with the keys `client_id`, `client_secret`, and `nonce_secret` respectively.
 
-You must set the `USE_SECRET_STORE` constant to `true` in [src/config.js](./src/config.js)
+You must set the `USE_SECRET_STORE` constant to `true` in [src/config.js](https://github.com/fastly/compute-js-auth/blob/main/src/config.js)
 
 > ⚠️ For this to work, Secret Stores must be enabled on your Fastly account. Secret Stores is a paid feature in Fastly Compute. Contact [Fastly Support](https://support.fastly.com) to opt in to the [beta](https://docs.fastly.com/products/fastly-product-lifecycle#beta).
 
-> 💡 To simplify local development and initial deployment, you may add the `[local_server.secret_stores]` and `[setup.secret_stores]` sections in your [fastly.toml](./fastly.toml) file. Check out [fastly.secretstore.example.toml](./fastly.secretstore.example.toml).
+> 💡 To simplify local development and initial deployment, you may add the `[local_server.secret_stores]` and `[setup.secret_stores]` sections in your [fastly.toml](https://github.com/fastly/compute-js-auth/blob/main/fastly.toml) file. Check out [fastly.secretstore.example.toml](https://github.com/fastly/compute-js-auth/blob/main/fastly.secretstore.example.toml).
 
 ## Using an OAuth 2.0 Identity Provider with Fastly Compute
 
@@ -116,8 +116,8 @@ As an example, if you are using [Google](https://developers.google.com/identity/
 1. In the [Google API Console](https://console.developers.google.com/), use the **Credentials API** to create a [new OAuth client ID](https://console.cloud.google.com/apis/credentials/oauthclient). Choose **Web application** as your application type, give your app a name, and finally make note of the following two outputs:
    - The *Client ID* (eg. `RANDOM_LONG_ID.apps.googleusercontent.com`) is shown next to your application name.
    - The *Client SECRET* (eg. `RANDOM_LONG_SECRET`) is shown next to your application name.
-1. Create an `.env` ([example](./.env.example)) in your Fastly project and paste in the `CLIENT_ID` and `CLIENT_SECRET` obtained before. Set a random `NONCE_SECRET`, a long, non-guessable random string of your choice. Save the file.
-1. After you've [configured](#configuration) and [deployed](#deploy-the-fastly-service-and-get-a-domain) your new Fastly Compute service, find your new OAuth client ID in the [Google API Console](https://console.cloud.google.com/apis/credentials), and add `https://{random-funky-words}.edgecompute.app/callback` to the list of **Authorized redirect URIs** 
+1. Create an `.env` ([example](https://github.com/fastly/compute-js-auth/blob/main/.env.example)) in your Fastly project and paste in the `CLIENT_ID` and `CLIENT_SECRET` obtained before. Set a random `NONCE_SECRET`, a long, non-guessable random string of your choice. Save the file.
+1. After you've [configured](#configuration) and deployed your new Fastly Compute service, find your new OAuth client ID in the [Google API Console](https://console.cloud.google.com/apis/credentials), and add `https://{random-funky-words}.edgecompute.app/callback` to the list of **Authorized redirect URIs** 
    > 💡 Optionally, also add `http://127.0.0.1:7676/callback` as an authorized redirect URI for local development.
 
 ### Try it out!

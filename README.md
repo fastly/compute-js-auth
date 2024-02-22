@@ -2,7 +2,7 @@
 
 Connect to an identity provider such as Okta using OAuth 2.0 and validate authentication status at the network's edge, using [Fastly Compute](https://www.fastly.com/products/edge-compute) to authorize access to your edge or origin hosted applications.
 
-**For more starter kits for Compute, head over to the [Fastly Developer Hub](https://www.fastly.com/documentation/solutions/starters)**
+**For more starter kits for Compute, head over to the [Fastly Documentation Hub](https://www.fastly.com/documentation/solutions/starters)**
 
 > This starter kit has an [equivalent Rust implementation](https://github.com/fastly/compute-rust-auth) 🦀
 

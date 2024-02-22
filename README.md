@@ -2,7 +2,7 @@
 
 Connect to an identity provider such as Okta using OAuth 2.0 and validate authentication status at the network's edge, using [Fastly Compute](https://www.fastly.com/products/edge-compute) to authorize access to your edge or origin hosted applications.
 
-**For more starter kits for Compute, head over to the [Fastly Developer Hub](https://developer.fastly.com/solutions/starters)**
+**For more starter kits for Compute, head over to the [Fastly Developer Hub](https://www.fastly.com/documentation/solutions/starters)**
 
 > This starter kit has an [equivalent Rust implementation](https://github.com/fastly/compute-rust-auth) 🦀
 
@@ -20,7 +20,7 @@ Scroll down to view [the flow in more detail](#the-flow-in-detail).
 
 After you have checked out the code from this repository, you'll need to do some configuration before you can deploy it, so that Fastly knows which identity provider to use and how to authenticate.
 
-> Make sure you have installend and configured the [Fastly CLI](https://developer.fastly.com/learning/tools/cli) first.
+> Make sure you have installend and configured the [Fastly CLI](https://www.fastly.com/documentation/reference/tools/cli) first.
 
 ### Quick start
 
@@ -55,7 +55,7 @@ You will be prompted to set up two backends:
 * `origin`: Your application or content server.
 
 #### Configuration data
-Configuration data lives in Fastly [Config Store](https://developer.fastly.com/learning/concepts/edge-state/dynamic-config/#config-stores) named `compute_js_auth_config`, with the following keys:
+Configuration data lives in Fastly [Config Store](https://www.fastly.com/documentation/guides/concepts/edge-state/dynamic-config/#config-stores) named `compute_js_auth_config`, with the following keys:
 * `openid_configuration`: The OpenID Configuration (OIDC) metadata from your authorization server, JSON-serialized;
 * `jwks`: JWKS metadata from your authorization server (obtained from the `jwks_uri` property of the OIDC metadata), JSON-serialized.
 
@@ -74,7 +74,7 @@ Create an `.env` file ([example contents here](https://github.com/fastly/compute
 
 ##### Option B: Using a Fastly Secret Store (beta)
 
-Store configuration secrets in a Fastly [Secret Store](https://developer.fastly.com/learning/concepts/edge-state/dynamic-config/#secret-stores) named `compute_js_auth_secrets`, with the keys `client_id`, `client_secret`, and `nonce_secret` respectively.
+Store configuration secrets in a Fastly [Secret Store](https://www.fastly.com/documentation/guides/concepts/edge-state/dynamic-config/#secret-stores) named `compute_js_auth_secrets`, with the keys `client_id`, `client_secret`, and `nonce_secret` respectively.
 
 You must set the `USE_SECRET_STORE` constant to `true` in [src/config.js](https://github.com/fastly/compute-js-auth/blob/main/src/config.js)
 
@@ -88,9 +88,9 @@ You must set the `USE_SECRET_STORE` constant to `true` in [src/config.js](https:
 
 You might operate your own identity service, but any [OAuth 2.0, OpenID Connect (OIDC) conformant identity provider](https://en.wikipedia.org/wiki/List_of_OAuth_providers) will work.  You will need the following from your IdP:
 
-* A *Client ID*, and optionally, a *Client secret* ➡️ Set the `CLIENT_ID` and `CLIENT_SECRET` environment variables, or set the `client_id` and `client_secret` keys in the [Secret Store](https://developer.fastly.com/learning/concepts/edge-state/dynamic-config/#secret-stores).
-* An *OpenID Connect Discovery document* ➡️ Set the `openid_configuration` key (JSON-serialized string value) in the [Config Store](https://developer.fastly.com/learning/concepts/edge-state/dynamic-config/#config-stores).
-* A *JSON Web key set* ➡️  Set the `jwks` key (JSON-serialized string value) in the [Config Store](https://developer.fastly.com/learning/concepts/edge-state/dynamic-config/#config-stores).
+* A *Client ID*, and optionally, a *Client secret* ➡️ Set the `CLIENT_ID` and `CLIENT_SECRET` environment variables, or set the `client_id` and `client_secret` keys in the [Secret Store](https://www.fastly.com/documentation/guides/concepts/edge-state/dynamic-config/#secret-stores).
+* An *OpenID Connect Discovery document* ➡️ Set the `openid_configuration` key (JSON-serialized string value) in the [Config Store](https://www.fastly.com/documentation/guides/concepts/edge-state/dynamic-config/#config-stores).
+* A *JSON Web key set* ➡️  Set the `jwks` key (JSON-serialized string value) in the [Config Store](https://www.fastly.com/documentation/guides/concepts/edge-state/dynamic-config/#config-stores).
 * The hostname of the IdP's *authorization server* ➡️ Create as a backend called `idp` on your Fastly service
 
 ### 2. Deploy the Fastly service and get a domain

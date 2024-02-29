@@ -1,5 +1,5 @@
 # This file describes a Fastly Compute@Edge package. To learn more visit:
-# https://developer.fastly.com/reference/fastly-toml/
+# https://www.fastly.com/documentation/reference/fastly-toml/
 
 authors = ["dmilitaru@fastly.com"]
 description = "Connect to an identity provider such as Google using OAuth 2.0 and validate authentication status at the Edge, to authorize access to your edge or origin hosted applications."

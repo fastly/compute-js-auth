@@ -6,7 +6,7 @@ import { env } from "fastly:env";
 const CONFIG_STORE_NAME = `compute_js_auth_config`
 
 // Load secrets from a Secret Store (requires opt-in to the Fastly Secret Store beta).
-// See: https://developer.fastly.com/learning/concepts/edge-state/dynamic-config/#secret-stores
+// See: https://www.fastly.com/documentation/guides/concepts/edge-state/dynamic-config/#secret-stores
 const USE_SECRET_STORE = false
 const SECRET_STORE_NAME = `compute_js_auth_secrets`
 
